@@ -86,9 +86,9 @@
                 for whatever.</p>
         </div>
         <div class="col-md-5">
-            <a href="pictures-main.html">
+            <a href="{% url 'pictures:index' %}">
                 <img class="featurette-image img-responsive center-block"
-                     data-src="holder.js/500x500/auto" alt="Photo Set" src="media/Church_sunset.jpg"
+                     data-src="holder.js/500x500/auto" alt="Photo Set" src="{% static '' %}{{ sunset }}"
                      data-holder-rendered="true"></a>
         </div>
     </div>
@@ -97,33 +97,13 @@
 
     <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-            <h2 class="featurette-heading">Hungry? <span class="text-muted">
-                         Here are some ideas.</span></h2>
-            <p class="lead">All of the recipes are either personal
-                homemade foods, or my favorite foods that I've pulled
-                from online. Links to the webistes are provided on the
-                page so you can go visit them yourself, or just follow
-                along.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-            <a href="recipes-home.html">
-                <img class="featurette-image img-responsive center-block"
-                     data-src="holder.js/500x500/auto" alt="Recipes Home Page" src="media/burger.jpg"
-                     data-holder-rendered="true"></a>
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-        <div class="col-md-7">
             <h2 class="featurette-heading">Like my site? <span class="text-muted">Feel free to tell me about it.</span>
             </h2>
             <p class="lead">If you like anything on here, let me know.
                 Or if you're a recruiter, hire me! Seriously, check me
                 out on social media or take a look at my resume. Thanks for visiting my site!</p>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 col-md-pull-7">
             <a href="contact.html">
                 <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto"
                      alt="500x500"
