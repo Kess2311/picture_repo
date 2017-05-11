@@ -2,6 +2,7 @@ from django.shortcuts import render
 import os
 from django.conf import settings
 from .forms import ContactForm
+from .models import Contact
 
 
 def home(request):
@@ -28,3 +29,8 @@ def contact_page(request):
 
 def contact_submit(request):
     return render(request, 'index/contact_submit.html')
+
+
+def view_forms(request):
+    form_list = Contact.objects.all()
+    return render(request, 'index/view_contact_forms.html', {'form_list': form_list})
