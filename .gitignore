@@ -2,3 +2,7 @@
 *.pyc
 
 *.xml
+
+my_site/index/migrations/
+
+my_site/pictures/migrations/
