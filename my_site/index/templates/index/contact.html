@@ -3,40 +3,50 @@
 {% block content %}
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-                <h1> Contact Me!</h1>
-                Feel free to contact me. Just fill out the form and I'll
-                get back to you as soon as I can. If you're just leaving
-                comment, that's great too! I'm open to feedback. Thanks
-                for visiting.
-                <div class="col-xs-12" style="height:50px;"></div>
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <form>
-                            <div class="form-group">
-                                <label for="InputName">Name:</label>
-                                <input type="username" class="form-control" id="exampleInputName" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="InputEmail">Email:</label>
-                                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="InputComment">Message:</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit &nbsp;&nbsp;<i
-                                    class="fa fa-location-arrow" style="float:right"></i></button>
-                        </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h1> Contact Me!</h1>
+                    <p>Feel free to contact me. Just fill out the form and I'll
+                        get back to you as soon as I can. If you're just leaving
+                        comment, that's great too! I'm open to feedback. Thanks
+                        for visiting.</p>
+                    <div class="col-xs-12" style="height:50px;"></div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <form method="post" action="{% url 'index:contact_submit' %}">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <div class="row">
+                                        <div class="col-md-2"><p>{{ field.name }}:</p></div>
+                                        <div class="col-md-5">{{ field }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5" style="color:red;">{{ field.errors }}</div>
+                                    </div>
+                                {% endfor %}
+                                <div class="row">
+                                    <div class="col-sm-1 col-md-push-5"><input type="submit" value="Send"
+                                                                               class="button"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="col-xs-12" style="height:50px;"></div>
+
+
+
+
+
+    <div class="col-xs-12" style="height:50px;"></div>
+
+
+
+
 {% endblock %}
