@@ -3,7 +3,9 @@
 
 *.xml
 
+
 *.sqlite3
+
 
 my_site/index/migrations/
 
