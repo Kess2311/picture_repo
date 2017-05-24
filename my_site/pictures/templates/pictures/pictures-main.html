@@ -1,6 +1,67 @@
 {% extends 'index/index.html' %}
 {% block title %}My Pictures{% endblock %}
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 main">
+                <h1 class="page-header">Picture Home</h1>
+
+                <div class="row placeholders">
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                             width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                        <h4>Label</h4>
+                        <span class="text-muted">Something else</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                             width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                        <h4>Label</h4>
+                        <span class="text-muted">Something else</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                             width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                        <h4>Label</h4>
+                        <span class="text-muted">Something else</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                             width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                        <h4>Label</h4>
+                        <span class="text-muted">Something else</span>
+                    </div>
+                </div>
+
+                <h2 class="sub-header">All Photos</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>File Name</th>
+                            <th>Description</th>
+                            <th>Date Taken</th>
+                            <th>File Size</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for photo in picture_list %}
+                            <tr>
+                                <td>{{ photo.location }}</td>
+                                <td>{{ photo.file.name }}</td>
+                                <td>{{ photo.description }}</td>
+                                <td>{{ photo.date }}</td>
+                                <td>{{ photo.file.size|filesizeformat }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=col-xs-12" style="height:40px;"></div>
 
 
 {% endblock %}

@@ -9,4 +9,7 @@ urlpatterns = [
     url(r'^new_york/$', views.new_york, name='new_york'),
     url(r'^night/$', views.night, name='night'),
     url(r'^colorado/$', views.colorado, name='colorado'),
+    url(r'^cars/$', views.cars, name='cars'),
+    url(r'^add_photo/$', views.add_photo, name='add_photo'),
+    url(r'^edit_photo/(?P<photo_id>[0-9]+)/$', views.edit_photo, name='edit_photo')
 ]
