@@ -6,3 +6,5 @@
 my_site/index/migrations/
 
 *.sqlite3
+
+my_site/pictures/migrations/
